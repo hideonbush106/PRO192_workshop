@@ -9,10 +9,10 @@ package part1;
  * @author Asus
  */
 public class Car {
-    String colour;
-    int enginePower;
-    boolean convertible;
-    boolean parkingBrake;
+    private String colour;
+    private int enginePower;
+    private boolean convertible;
+    private boolean parkingBrake;
     Car(){
         colour = "";
         enginePower = 0;

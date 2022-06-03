@@ -15,14 +15,20 @@ public class Guitar {
     String model;
     String backWood;
     String topWood;
-    Guitar(){};
-    Guitar(String SerialNumber, int Price, String Builder, String Model, String BackWood, String TopWood) {
-        serialNumber = SerialNumber;
-        price = Price;
-        builder = Builder;
-        model = Model;
-        backWood = BackWood;
-        topWood = TopWood;
+    Guitar(){
+        serialNumber = "";
+        price = 0;
+        builder = "";
+        backWood = "";
+        topWood = " ";        
+    }
+    Guitar(String serialNumber, int price, String builder, String model, String backWood, String topWood) {
+        this.serialNumber = serialNumber;
+        this.price = price;
+        this.builder = builder;
+        this.model = model;
+        this.backWood = backWood;
+        this.topWood = topWood;
     }
     
     
@@ -53,28 +59,28 @@ public class Guitar {
         
         
         //getter
-        public void setSerialNumber(String SerialNumber) {
-            serialNumber = SerialNumber;
+        public void setSerialNumber(String serialNumber) {
+            serialNumber = serialNumber;
         }
         
-        public void setPrice(int Price) {
-            price = Price;
+        public void setPrice(int price) {
+            this.price = price;
         }
         
-        public void setBuilder(String Builder) {
-            builder = Builder;
+        public void setBuilder(String builder) {
+            this.builder = builder;
         }
         
-        public void setModel(String Model) {
-            model = Model;
+        public void setModel(String model) {
+            this.model = model;
         }
         
-        public void setBackWood(String BackWood) {
-            backWood = BackWood;
+        public void setBackWood(String backWood) {
+            this.backWood = backWood;
         }
         
-        public void setTopWood(String TopWood) {
-            topWood = TopWood;
+        public void setTopWood(String topWood) {
+            this.topWood = topWood;
         }
         
         public void createSound() {

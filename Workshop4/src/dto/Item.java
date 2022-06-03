@@ -12,8 +12,8 @@ import java.util.Scanner;
  */
 public class Item {
 
-    int value;
-    String creator;
+    protected int value;
+    protected String creator;
 
     public Item() {
         this.value = 0;

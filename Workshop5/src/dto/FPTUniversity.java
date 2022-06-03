@@ -8,6 +8,6 @@ package dto;
  *
  * @author Asus
  */
-abstract public class Organization {
+public class FPTUniversity {
     
 }
