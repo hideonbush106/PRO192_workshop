@@ -45,11 +45,15 @@ public class Item {
 
     public void input() {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Input creator: ");
-        creator = sc.nextLine();
-        System.out.print("Input value: ");
-        sc = new Scanner(System.in);
-        value = sc.nextInt();
+        do {
+            System.out.print("Enter the value: ");
+            value = sc.nextInt();
+        } while (value <= 0);
+        do {
+            sc = new Scanner(System.in);
+            System.out.print("Enter the creator: ");
+            creator = sc.nextLine();
+        } while (creator.isEmpty());
     }
 
     public void ouput() {

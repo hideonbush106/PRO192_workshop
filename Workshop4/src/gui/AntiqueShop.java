@@ -17,10 +17,7 @@ import java.util.Scanner;
 public class AntiqueShop {
 
     public static void main(String[] args) {
-        Item item=null;
-        Vase vase = new Vase();
-        Statue statue = new Statue();
-        Painting painting = new Painting();
+        Item item = null;
         int choice = 0;
         Scanner sc = new Scanner(System.in);
         do {
