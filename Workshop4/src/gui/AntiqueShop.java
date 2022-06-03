@@ -49,7 +49,9 @@ public class AntiqueShop {
                         } else if (item instanceof Painting) {
                             ((Painting) item).outputPainting();
                         }
-                    } else System.out.println("you need to create an object");
+                    } else {
+                        System.out.println("you need to create an object");
+                    }
                 }
             }
         } while (choice <= 4);
