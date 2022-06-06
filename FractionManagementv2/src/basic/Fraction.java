@@ -52,9 +52,9 @@ public class Fraction {
         System.out.print(+tuSo + "/" + mauSo + "\n");
     }
 
-//    public Fraction fractionSum(int tuSo2, int mauSo2) {
-//        int tmp1 = tuSo * mauSo2 + mauSo * tuSo2;
-//        int tmp2 = mauSo * mauSo2;
+//    public Fraction fractionSum(int tuSo, int mauSo) {
+//        int tmp1 = this.tuSo * mauSo + this.mauSo * tuSo;
+//        int tmp2 = this.mauSo * mauSo;
 //        Fraction result = new Fraction();
 //        result.tuSo = tmp1;
 //        result.mauSo = tmp2;
@@ -69,9 +69,9 @@ public class Fraction {
         return result;
     }
 
-    public Fraction fractionSub(int tuSo2, int mauSo2) {
-        int tmp1 = tuSo * mauSo2 - mauSo * tuSo2;
-        int tmp2 = mauSo * mauSo2;
+    public Fraction fractionSub(int tuSo, int mauSo) {
+        int tmp1 = this.tuSo * mauSo - this.mauSo * tuSo;
+        int tmp2 = this.mauSo * mauSo;
         Fraction result = new Fraction();
         result.tuSo = tmp1;
         result.mauSo = tmp2;
@@ -86,9 +86,9 @@ public class Fraction {
 //        result.mauSo = tmp2;
 //        return result;
 //    }
-    public Fraction fractionMul(int tuSo2, int mauSo2) {
-        int tmp1 = tuSo * tuSo2;
-        int tmp2 = mauSo * mauSo2;
+    public Fraction fractionMul(int tuSo, int mauSo) {
+        int tmp1 = this.tuSo * tuSo;
+        int tmp2 = this.mauSo * mauSo;
         Fraction result = new Fraction();
         result.tuSo = tmp1;
         result.mauSo = tmp2;
@@ -103,9 +103,9 @@ public class Fraction {
 //        result.mauSo = tmp2;
 //        return result;
 //    }
-//    public Fraction fractionDiv(int tuSo2, int mauSo2) {
-//        int tmp1 = tuSo * mauSo2;
-//        int tmp2 = mauSo * tuSo2;
+//    public Fraction fractionDiv(int tuSo, int mauSo) {
+//        int tmp1 = this.tuSo * mauSo;
+//        int tmp2 = this.mauSo * tuSo;
 //        Fraction result = new Fraction();
 //        result.tuSo = tmp1;
 //        result.mauSo = tmp2;

@@ -13,13 +13,13 @@ public class Car {
     private int enginePower;
     private boolean convertible;
     private boolean parkingBrake;
-    Car(){
+    public Car() {
         colour = "";
         enginePower = 0;
         convertible = false;
         parkingBrake = false;
     }
-    Car(String colour, int enginePower, boolean convertible, boolean parkingBrake) {
+    public Car(String colour, int enginePower, boolean convertible, boolean parkingBrake) {
         this.colour = colour;
         this.enginePower = enginePower;
         this.convertible = convertible;

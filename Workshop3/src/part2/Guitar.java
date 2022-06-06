@@ -17,7 +17,7 @@ public class Guitar {
     String backWood;
     String topWood;
 
-    Guitar() {
+    public Guitar() {
         serialNumber = "";
         price = 0;
         builder = " ";
@@ -25,7 +25,7 @@ public class Guitar {
         topWood = " ";
     }
 
-    Guitar(String serialNumber, int price, String builder, String model, String backWood, String topWood) {
+    public Guitar(String serialNumber, int price, String builder, String model, String backWood, String topWood) {
         this.serialNumber = serialNumber;
         this.price = price;
         this.builder = builder;
