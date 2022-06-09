@@ -17,6 +17,10 @@ public class Tester {
 //        b.userInput();
 //        b.userOutput();
         
+        Student a = new Student();
+        a.userInput();
+        a.userOutput();
+
         Student c=new Student(456, "Phong", "male");
         c.setName("Anh");
         c.userOutput();

@@ -13,12 +13,12 @@ import java.util.Scanner;
 public class Fraction {
 
     public int tuSo, mauSo;
-    
+
     public Fraction() {
         tuSo = 0;
         mauSo = 0;
     }
-    
+
     public Fraction(int tuSo, int mauSo) {
         this.tuSo = tuSo;
         this.mauSo = mauSo;
@@ -39,7 +39,7 @@ public class Fraction {
     public void setTuSo(int tuSo) {
         this.tuSo = tuSo;
     }
-    
+
     public void userInput() {
         Scanner a = new Scanner(System.in);
         System.out.print("Input numerator: ");
