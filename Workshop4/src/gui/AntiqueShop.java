@@ -4,7 +4,6 @@ import dto.Item;
 import dto.Painting;
 import dto.Statue;
 import dto.Vase;
-import java.util.Scanner;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -17,16 +16,11 @@ import java.util.Scanner;
 public class AntiqueShop {
 
     public static void main(String[] args) {
+        String[] options = {" Create a Vase.", " Create a Statue.", " Create a Painting.", " Display the Item."};
         Item item = null;
         int choice = 0;
-        Scanner sc = new Scanner(System.in);
         do {
-            System.out.println("1. Create a Vase.");
-            System.out.println("2. Create a Statue.");
-            System.out.println("3. Create a Painting.");
-            System.out.println("4. Display the Item.");
-            System.out.print("Input a choice: ");
-            choice = sc.nextInt();
+            choice = Menu.getChoice(options);
             switch (choice) {
                 case 1 -> {
                     item = new Vase();

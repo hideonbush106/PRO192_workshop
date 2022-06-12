@@ -1,6 +1,7 @@
 package basic;
 
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /*
@@ -26,11 +27,30 @@ public class Point {
     }
     
     public void userInput() {
-        Scanner a = new Scanner(System.in);
-        System.out.print("Input x-axis: ");
-        x = a.nextInt();
-        System.out.print("Input y-axis: ");
-        y = a.nextInt();
+        boolean cont = false;
+        Scanner a = null;
+        do {
+            try {
+                a = new Scanner(System.in);
+                System.out.print("Input x-axis: ");
+                x = a.nextInt();
+                cont = true;
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid");
+            }
+        } while (!cont);
+        cont = false;
+        do {
+            try {
+                a = new Scanner(System.in);
+                System.out.print("Input y-axis: ");
+                y = a.nextInt();
+                cont = true;
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid");
+            }
+        } while (!cont);
+
     }
     //method output
     public void userOutput() {

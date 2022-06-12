@@ -46,7 +46,7 @@ public class Student {
                 }
                 cont = true;
             } catch (InputMismatchException e) {
-                System.out.println("ID is number");
+                System.out.println("Invalid ID");
             } catch (Exception e) {
                 System.out.println("ID must larger than 1");
             }
@@ -68,9 +68,23 @@ public class Student {
             }
         } while (!cont);
 
-        c = new Scanner(System.in);
-        System.out.println("Input gender: ");
-        gender = c.nextLine();
+        cont = false;
+        
+        do {            
+            try {
+                c = new Scanner(System.in);
+                System.out.println("Input gender: ");
+                gender = c.nextLine();
+                if (!gender.matches("(fe|^)male")) {
+                    throw new Exception();
+                }
+            } catch (Exception e) {
+                System.out.println("Invalid gender");
+            }
+        } while (!cont);
+//        c = new Scanner(System.in);
+//        System.out.println("Input gender: ");
+//        gender = c.nextLine();
     }
 
     public void userOutput() {

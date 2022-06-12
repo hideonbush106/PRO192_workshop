@@ -1,5 +1,6 @@
 package basic;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /*
@@ -41,11 +42,29 @@ public class Fraction {
     }
 
     public void userInput() {
-        Scanner a = new Scanner(System.in);
-        System.out.print("Input numerator: ");
-        tuSo = a.nextInt();
-        System.out.print("Input denominator: ");
-        mauSo = a.nextInt();
+        Scanner a = null;
+        boolean cont = false;
+        do {
+            try {
+                a = new Scanner(System.in);
+                System.out.print("Input numerator: ");
+                tuSo = a.nextInt();
+                cont = true;
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid");
+            }
+        } while (!cont);
+        cont = false;
+        do {
+            try {
+                a = new Scanner(System.in);
+                System.out.print("Input denominator: ");
+                mauSo = a.nextInt();
+                cont = true;
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid");
+            }
+        } while (!cont);
     }
 
     public void userOutput() {

@@ -4,6 +4,7 @@
  */
 package dto;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -44,18 +45,38 @@ public class Item {
     }
 
     public void input() {
-        Scanner sc = new Scanner(System.in);
+        Scanner sc = null;
+        boolean cont = false;
         do {
-            System.out.print("Enter the value: ");
-            value = sc.nextInt();
-        } while (value <= 0);
+            try {
+                sc = new Scanner(System.in);
+                System.out.print("Enter the value: ");
+                value = sc.nextInt();
+                if (value < 0) {
+                    throw new Exception();
+                }
+                cont = true;
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid value");
+            } catch (Exception e) {
+                System.out.println("Value must larger than 1");
+            }
+        } while (!cont);
+        cont = false;
         do {
-            sc = new Scanner(System.in);
-            System.out.print("Enter the creator: ");
-            creator = sc.nextLine();
-        } while (creator.isEmpty());
+            try {
+                sc = new Scanner(System.in);
+                System.out.print("Enter the creator: ");
+                creator = sc.nextLine();
+                if (!creator.matches("^[a-zA-Z]+([a-zA-Z ]+)")) {
+                    throw new Exception();
+                }
+                cont = true;
+            } catch (Exception e) {
+                System.out.println("Invalid name");
+            }
+        } while (!cont);
     }
-
     public void ouput() {
         System.out.println("Creator: " + creator);
         System.out.println("Value: " + value);

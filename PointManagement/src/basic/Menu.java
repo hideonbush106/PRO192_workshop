@@ -40,7 +40,7 @@ public class Menu {
                 }
             }
             case 3 -> {
-                if (a != null && b != null) System.out.println("Can not calculate distance\n");
+                if (a == null && b == null) System.out.println("Can not calculate distance\n");
                 else {
                     double d = b.distance(a);
                     System.out.println("The distance is " + d + "\n");
