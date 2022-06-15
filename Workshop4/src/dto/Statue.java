@@ -4,6 +4,7 @@
  */
 package dto;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -44,18 +45,40 @@ public class Statue extends Item {
     }
 
     public void inputStatue() {
-        Scanner sc = new Scanner(System.in);
+        Scanner sc = null;
+        boolean cont = false;
         super.input();
         do {
-            System.out.print("Input weight: ");
-            weight = sc.nextInt();
-        } while (weight <= 0);
+            try {
+                System.out.print("Input weight: ");
+                sc = new Scanner(System.in);
+                weight = sc.nextInt();
+                if (weight <= 0) {
+                    throw new Exception();
+                }
+                cont = true;
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid");
+            } catch (Exception e) {
+                System.out.println("Value must larger than 1");
+            }
+        } while (!cont);
+
+        cont = false;
 
         do {
-            System.out.print("Input colour: ");
-            sc = new Scanner(System.in);
-            colour = sc.nextLine();
-        } while (colour.isEmpty());
+            try {
+                System.out.print("Input colour: ");
+                sc = new Scanner(System.in);
+                colour = sc.nextLine();
+                if (!colour.matches("^[a-zA-Z]+([a-zA-Z ]+)")) {
+                    throw new Exception();
+                }
+                cont = true;
+            } catch (Exception e) {
+                System.out.println("Invalid colour");
+            }
+        } while (!cont);
 
     }
 

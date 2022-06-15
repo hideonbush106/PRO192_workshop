@@ -4,6 +4,7 @@
  */
 package dto;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -68,22 +69,69 @@ public class Painting extends Item {
     }
 
     public void inputPainting() {
-        Scanner sc = new Scanner(System.in);
+        //TODO: add try-catch
+        Scanner sc = null;
+        boolean cont = false;
         super.input();
         do {
-            System.out.print("Input height: ");
-            height = sc.nextInt();
-        } while (height <= 0);
-
+            try {
+                sc = new Scanner(System.in);
+                System.out.print("Input height: ");
+                height = sc.nextInt();
+                if (height < 0) {
+                    throw new Exception();
+                }
+                cont = true;
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid value");
+            } catch (Exception e) {
+                System.out.println("Must larger than 1");
+            }
+        } while (!cont);
+        
+        cont = false;
+        
         do {
-            System.out.print("Input width: ");
-            width = sc.nextInt();
-        } while (width <= 0);
-
-        System.out.print("Is water colour: ");
-        isWaterColour = sc.nextBoolean();
-        System.out.print("Is framed: ");
-        isFramed = sc.nextBoolean();
+            try {
+                sc = new Scanner(System.in);
+                System.out.print("Input width: ");
+                width = sc.nextInt();
+                if (width <= 0) {
+                    throw new Exception();
+                }
+                cont = true;
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid value");
+            } catch (Exception e) {
+                System.out.println("Must larger than 1");
+            }
+        } while (!cont);
+        
+        cont = false;
+        
+        do {
+            try {
+                sc = new Scanner(System.in);
+                System.out.print("Is water colour: ");
+                isWaterColour = sc.nextBoolean();
+                cont = true;
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid");
+            }
+        } while (!cont);
+        
+        cont = false;
+        
+        do {
+            try {
+                sc = new Scanner(System.in);
+                System.out.print("Is framed: ");
+                isFramed = sc.nextBoolean();
+                cont = true;
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid");
+            }
+        } while (!cont);
     }
 
     public void outputPainting() {

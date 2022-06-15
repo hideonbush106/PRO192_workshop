@@ -4,6 +4,7 @@
  */
 package dto;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -46,18 +47,41 @@ public class Vase extends Item {
     }
 
     public void inputVase() {
-        Scanner sc = new Scanner(System.in);
+        Scanner sc = null;
+        boolean cont = false;
         super.input();
         do {
-            System.out.print("Input height: ");
-            height = sc.nextInt();
-        } while (height <= 0);
+            try {
+                sc = new Scanner(System.in);
+                System.out.print("Input height: ");
+                height = sc.nextInt();
+                if (height < 0) {
+                    throw new Exception();
+                }
+                cont = true;
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid");
+            } catch (Exception e) {
+                System.out.println("Must larger than 1");
+            }
+        } while (!cont);
+
+        cont = false;
 
         do {
-            System.out.print("Input material: ");
-            sc = new Scanner(System.in);
-            material = sc.nextLine();
-        } while (material.isEmpty());
+            try {
+                System.out.print("Input material: ");
+                sc = new Scanner(System.in);
+                material = sc.nextLine();
+                if (!material.matches("^[a-zA-Z]+([a-zA-Z ]+)")) {
+                    throw new Exception();
+                }
+                cont = true;
+            } catch (Exception e) {
+                System.out.println("Invalid");
+            }
+        } while (!cont);
+
     }
 
     public void outputVase() {

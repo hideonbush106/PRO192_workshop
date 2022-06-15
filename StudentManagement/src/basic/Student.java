@@ -69,8 +69,8 @@ public class Student {
         } while (!cont);
 
         cont = false;
-        
-        do {            
+
+        do {
             try {
                 c = new Scanner(System.in);
                 System.out.println("Input gender: ");
@@ -78,6 +78,7 @@ public class Student {
                 if (!gender.matches("(fe|^)male")) {
                     throw new Exception();
                 }
+                cont = true;
             } catch (Exception e) {
                 System.out.println("Invalid gender");
             }
