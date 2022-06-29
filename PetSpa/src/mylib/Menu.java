@@ -4,10 +4,27 @@
  */
 package mylib;
 
+import java.util.Scanner;
+
 /**
  *
- * @author Admin
+ * @author Asus
  */
 public class Menu {
+
+    public static int getChoice(Object[] options) {
+        for (int i = 0; i < options.length; i++) {
+            System.out.println((i + 1) + "-" + options[i]);
+        }
+        System.out.print("Choose 1.." + options.length + ": ");
+        Scanner sc = new Scanner(System.in);
+        return Integer.parseInt(sc.nextLine());
     
+    }
 }
+
+// In main:
+//String[] options = {" Option 1", " Option 2", " Option 3.", " ..."};
+//        int choice = 0;
+//        do {
+//            choice = Menu.getChoice(options);

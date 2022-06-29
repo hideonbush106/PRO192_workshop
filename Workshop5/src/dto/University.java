@@ -35,6 +35,7 @@ public class University extends Organization {
         System.out.println("Provide education at university standard");
     }
 
+    @Override
     public String toString() {
         return "Encourage the advancement and development of knowledge";
     }

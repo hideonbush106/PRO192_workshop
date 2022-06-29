@@ -34,6 +34,7 @@ public class Colony extends Organization {
         System.out.println("Colony can reproduce itself through a process");
     }
 
+    @Override
     public String toString() {
         return "The colony size is " + super.size + ", the colony’s place is " + place;
     }

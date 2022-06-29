@@ -30,8 +30,9 @@ public class FPTUniversity extends University implements Role {
         this.address = address;
     }
 
+    @Override
     public String toString() {
-        return "FPTU has four campuses Hanoi, HCM, DaNang, CanTho, QuyNhon";
+        return "FPTU has five campuses Hanoi, HCM, DaNang, CanTho, QuyNhon";
     }
 
     @Override

@@ -68,14 +68,6 @@ public class Staff {
         this.basicSalary = basicSalary;
     }
 
-    public Task[] getToDoList() {
-        return toDoList;
-    }
-
-    public void setToDoList(Task[] toDoList) {
-        this.toDoList = toDoList;
-    }
-
     public int getNoOfTasks() {
         return noOfTasks;
     }
@@ -115,12 +107,8 @@ public class Staff {
 
     public void displayToDolist() {
         if (noOfTasks > 0) {
-            for (Task task : toDoList) {
-                if (task == null) {
-                    break;
-                } else {
-                    System.out.println(task.toString());
-                }
+            for (int i = 0; i < noOfTasks; i++) {
+                System.out.println(toDoList[i].toString()); //use this
             }
         } else {
             System.out.println("No task yet");

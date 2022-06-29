@@ -29,14 +29,6 @@ public class Manager extends Staff {
         this.bonusSalary = bonusSalary;
     }
 
-    public Staff[] getStaffList() {
-        return staffList;
-    }
-
-    public void setStaffList(Staff[] staffList) {
-        this.staffList = staffList;
-    }
-
     public int getNoOfStaffs() {
         return noOfStaffs;
     }

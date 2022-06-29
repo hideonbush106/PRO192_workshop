@@ -30,6 +30,7 @@ public class BeeColony extends Colony implements Role {
         this.type = type;
     }
 
+    @Override
     public String toString() {
         return "The colony’s type is " + type + ", size is about " + super.size + ", and the place is " + super.place;
     }
